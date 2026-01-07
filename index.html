@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ankush Singh Bhagaur | Backend Engineer</title>
+  <meta name="description" content="Backend Engineer specializing in Go, microservices, and high-performance systems.">
+  
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚙️</text></svg>">
+
+  <!-- Google Fonts: Inter (clean & modern) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind via CDN (for rapid styling) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#0f172a',
+            darker: '#0b1120',
+            accent: '#00F5D4',
+            lightgray: '#94a3b8'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0b1120;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    /* Terminal cursor blink */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .terminal-cursor {
+      animation: blink 1s infinite;
+    }
+
+    /* Gears background */
+    .gear {
+      position: absolute;
+      opacity: 0.07;
+      z-index: -1;
+    }
+    .gear-1 { top: 10%; left: 5%; width: 120px; animation: rotate 20s linear infinite; }
+    .gear-2 { bottom: 15%; right: 8%; width: 90px; animation: rotate 25s reverse infinite; }
+    .gear-3 { top: 40%; right: 20%; width: 70px; animation: rotate 18s infinite; }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Scroll fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Skill tag hover effect */
+    .skill-tag:hover {
+      background: linear-gradient(90deg, #00F5D4, #00b3a0);
+      color: #000;
+    }
+
+    /* Project card hover lift */
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 245, 212, 0.15);
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+  <!-- Backend Pulse Field Animation -->
+  <div id="backend-pulse-field" class="fixed inset-0 pointer-events-none z-[-1]"></div>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col justify-center px-6 md:px-16 py-12 relative">
+    <div class="max-w-4xl">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Ankush Singh Bhagaur</h1>
+      <h2 class="text-accent text-xl md:text-2xl mb-6 font-medium">Backend Engineer | Go Specialist | Performance Optimizer</h2>
+
+      <p class="text-lightgray mb-8 max-w-2xl fade-in">
+        I build resilient, high-throughput backend systems that scale under pressure — from event-driven microservices to database-optimized APIs.
+      </p>
+
+      <!-- Terminal-style stats -->
+      <div class="bg-darker p-4 rounded-lg mb-8 font-mono text-sm fade-in">
+        <div class="text-green-400">$ uptime</div>
+        <div class="text-accent">> 99.9% uptime</div>
+        <div class="text-green-400 mt-2">$ latency</div>
+        <div class="text-accent">> &lt;100ms avg response</div>
+        <div class="text-green-400 mt-2">$ memory_optimized</div>
+        <div class="text-accent">> -45% memory usage<span class="terminal-cursor">█</span></div>
+      </div>
+
+      <div class="flex flex-wrap gap-4 fade-in">
+        <a href="#experience" class="px-6 py-2.5 bg-accent text-darker font-medium rounded hover:bg-opacity-90 transition">Explore My Work</a>
+        <a 
+          href="assets/resume.pdf" 
+          download="Ankush_Singh_Bhagaur_Resume.pdf"
+          class="px-6 py-2.5 border border-accent text-accent font-medium rounded hover:bg-accent hover:text-darker transition"
+        >
+          Download Resume
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=career.ankush.bhagaur@gmail.com&su=Opportunity%20for%20Backend%20Engineer%20%E2%80%93%20Ankush%20Singh%20Bhagaur" target="_blank" class="px-6 py-2.5 border border-lightgray text-lightgray font-medium rounded hover:bg-lightgray hover:text-darker transition">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="px-6 md:px-16 py-16 bg-darker">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10 fade-in">Core Competencies</h2>
+      <div class="flex flex-wrap gap-3">
+        <!-- Skills from resume -->
+         <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">API</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">Golang</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">JavaScript</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">Node.js</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">PostgreSQL</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">MongoDB</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">ScyllaDB</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">RabbitMQ</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">NATS.io</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">AWS</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">Docker</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">Kubernetes</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">GraphQL</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">RESTful APIs</span>
+        <span class="skill-tag px-4 py-2 bg-gray-800 rounded-full border border-gray-700 transition">Terraform</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="px-6 md:px-16 py-16">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-12 fade-in">Professional Experience</h2>
+
+      <!-- Intangles -->
+      <div class="mb-12 fade-in">
+        <h3 class="text-xl font-semibold">Backend Developer — <span class="text-accent">Intangles</span></h3>
+        <p class="text-lightgray mb-2">Jul 2024 – Present | Pune, India</p>
+        <ul class="list-disc pl-5 space-y-2 text-lightgray">
+          <li>Reduced memory consumption by <span id="mem1">0</span>% using pprof and runtime profiling.</li>
+          <li>Built event-driven microservices with Golang, RabbitMQ, and NATS.io — <span id="uptime1">0</span>.<span id="uptime2">0</span>% uptime.</li>
+          <li>Handled 50,000+ daily requests with sub-<span id="latency1">000</span>ms response times via Gin framework.</li>
+          <li>Optimized PostgreSQL queries, reducing DB response time by <span id="db1">0</span>%.</li>
+        </ul>
+      </div>
+
+      <!-- Samespace -->
+      <div class="mb-12 fade-in">
+        <h3 class="text-xl font-semibold">SDE I - Backend — <span class="text-accent">Samespace</span></h3>
+        <p class="text-lightgray mb-2">Jun 2023 – May 2024 | Mumbai, India</p>
+        <ul class="list-disc pl-5 space-y-2 text-lightgray">
+          <li>Served 3,000+ candidates on Avenue hiring platform using clean architecture in Go.</li>
+          <li>Migrated from MongoDB to ScyllaDB, achieving <span id="perf1">0</span>% performance improvement.</li>
+          <li>Deployed on AWS (ECS, EC2, RDS) — improved system reliability by <span id="rel1">0</span>%.</li>
+          <li>Reduced GraphQL API response time by <span id="gql1">0</span>% using query batching & caching.</li>
+        </ul>
+      </div>
+
+      <!-- Secure Blink -->
+      <div class="fade-in">
+        <h3 class="text-xl font-semibold">SDE Intern — <span class="text-accent">Secure Blink</span></h3>
+        <p class="text-lightgray mb-2">Aug 2022 – Nov 2022 | Remote</p>
+        <ul class="list-disc pl-5 space-y-2 text-lightgray">
+          <li>Developed 15+ scalable RESTful APIs using AWS Lambda & Node.js.</li>
+          <li>Designed CI/CD pipeline with Jenkins, Docker, and GitHub Actions.</li>
+          <li>Implemented API security: sanitization, rate limiting, JWT middleware.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+<section id="projects" class="px-6 md:px-16 py-16 bg-darker">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-12 fade-in">Projects</h2>
+
+    <div class="space-y-8">
+      
+      <!-- Flappy Bird Game -->
+      <div class="project-card bg-gray-900 p-6 rounded-xl border border-gray-800 transition">
+        <div class="flex flex-col md:flex-row gap-6">
+          <!-- Image -->
+          <div class="flex-shrink-0 w-full md:w-64 h-40 overflow-hidden rounded-lg bg-gray-800 flex items-center justify-center">
+            <!-- Replace with your actual screenshot -->
+            <img 
+              src="assets/flappy.png" 
+              alt="Flappy Bird Game Preview"
+              class="w-full h-full object-cover"
+              onerror="this.src='https://placehold.co/600x400/1e293b/64748b?text=Game+Preview';"
+            />
+          </div>
+          <!-- Content -->
+          <div>
+            <h3 class="text-xl font-bold mb-2">Flappy Bird (Web + Desktop)</h3>
+            <p class="text-lightgray mb-4">
+              A lightweight remake to bring a smile — built with Go & WebAssembly. Runs in browser and as a native desktop app.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-gray-800 rounded">Go</span>
+              <span class="px-3 py-1 bg-gray-800 rounded">WebAssembly</span>
+              <span class="px-3 py-1 bg-gray-800 rounded">Fun Project</span>
+            </div>
+            <a 
+              href="https://remarkable-frangollo-afebe2.netlify.app/" 
+              target="_blank"
+              class="text-accent hover:underline inline-flex items-center"
+            >
+              Play Now →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- System Utility -->
+      <div class="project-card bg-gray-900 p-6 rounded-xl border border-gray-800 transition">
+        <div class="flex flex-col md:flex-row gap-6">
+          <!-- Image -->
+          <div class="flex-shrink-0 w-full md:w-64 h-40 overflow-hidden rounded-lg bg-gray-800 flex items-center justify-center">
+            <!-- Replace with your actual app screenshot -->
+            <img 
+              src="assets/utils.png" 
+              alt="System Utility App Preview"
+              class="w-full h-full object-cover"
+              onerror="this.src='https://placehold.co/600x400/1e293b/64748b?text=Desktop+App';"
+            />
+          </div>
+          <!-- Content -->
+          <div>
+            <h3 class="text-xl font-bold mb-2">System Utility – Real-time Monitor</h3>
+            <p class="text-lightgray mb-4">
+              Linux-based desktop application for live monitoring of CPU, memory, Docker containers, and network usage — built in Go for efficiency.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-gray-800 rounded">Go</span>
+              <span class="px-3 py-1 bg-gray-800 rounded">Linux</span>
+              <span class="px-3 py-1 bg-gray-800 rounded">System Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CI/CD Pipeline -->
+<div class="project-card bg-gray-900 p-6 rounded-xl border border-gray-800 transition">
+  <div class="flex flex-col md:flex-row gap-6">
+    <!-- Image -->
+    <div class="flex-shrink-0 w-full md:w-64 h-40 overflow-hidden rounded-lg bg-gray-800 flex items-center justify-center">
+      <img 
+        src="assets/cicd.jpg" 
+        alt="CI/CD Pipeline Architecture"
+        class="w-full h-full object-cover"
+        onerror="this.src='https://placehold.co/600x400/1e293b/64748b?text=CI%2FCD+Pipeline';"
+      />
+    </div>
+    <!-- Content -->
+    <div>
+      <h3 class="text-xl font-bold mb-3">CI/CD Pipeline</h3>
+      <p class="text-lightgray mb-4">
+        Automated deployment pipeline using GitHub Actions and Terraform to provision and deploy containerized services on Azure (ACI).
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-gray-800 rounded">GitHub Actions</span>
+        <span class="px-3 py-1 bg-gray-800 rounded">Terraform</span>
+        <span class="px-3 py-1 bg-gray-800 rounded">Docker</span>
+        <span class="px-3 py-1 bg-gray-800 rounded">Azure</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Contact / Terminal -->
+  <section class="px-6 md:px-16 py-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8 fade-in">Connect</h2>
+      <div class="bg-darker p-6 rounded-lg font-mono text-left fade-in">
+        <div class="text-green-400">ankush@portfolio:~$ contact --email</div>
+        <div class="text-accent mb-3">> <a href="mailto:career.ankush.bhagaur@gmail.com" class="underline">career.ankush.bhagaur@gmail.com</a></div>
+        
+        <div class="text-green-400">ankush@portfolio:~$ connect --linkedin</div>
+        <div class="text-accent mb-3">> <a href="https://linkedin.com/in/ankush-singh-3058b61a7" target="_blank" class="underline">linkedin.com/in/ankush-singh-3058b61a7</a></div>
+        
+        <div class="text-green-400">ankush@portfolio:~$ code --github</div>
+        <div class="text-accent">> <a href="https://github.com/InYuusha" target="_blank" class="underline">github.com/InYuusha</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-8 text-lightgray text-sm">
+    © 2026 Ankush Singh Bhagaur. Crafted with Go, Gears, and Graceful Shutdowns.
+  </footer>
+
+  <!-- JavaScript for animations -->
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Animated counters
+    function animateCounter(elementId, target, duration = 2000) {
+      let start = 0;
+      const increment = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          document.getElementById(elementId).textContent = target;
+          clearInterval(timer);
+        } else {
+          document.getElementById(elementId).textContent = Math.ceil(start);
+        }
+      }, 16);
+    }
+
+    // Trigger counters when in view
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter('mem1', 45);
+          animateCounter('uptime1', 99);
+          animateCounter('uptime2', 9);
+          animateCounter('latency1', 100);
+          animateCounter('db1', 35);
+          animateCounter('perf1', 40);
+          animateCounter('rel1', 60);
+          animateCounter('gql1', 50);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counterObserver.observe(document.querySelector('#skills'));
+  </script>
+
+  <style>
+  #backend-pulse-field {
+    background: #0b1120;
+  }
+
+  .pulse-node {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #334155;
+    box-shadow: 0 0 8px rgba(0, 245, 212, 0.3);
+    opacity: 0.8;
+  }
+
+  .pulse-node.db { background: #7e22ce; }       /* Purple for DB */
+  .pulse-node.api { background: #0ea5e9; }      /* Blue for API */
+  .pulse-node.mq { background: #84cc16; }       /* Green for MQ */
+
+  .pulse-line {
+    position: absolute;
+    height: 1px;
+    background: rgba(51, 65, 85, 0.3);
+    transform-origin: left center;
+  }
+
+  .pulse-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00F5D4;
+    box-shadow: 0 0 6px #00F5D4, 0 0 12px #00F5D4;
+    opacity: 0.9;
+  }
+</style>
+
+<script>
+  (function() {
+    const container = document.getElementById('backend-pulse-field');
+    if (!container) return;
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    // 🔹 Increased density
+    const nodeCount = window.innerWidth > 768 ? 12 : 7; // was 8/5 → now 12/7
+    const nodes = [];
+    const connections = [];
+
+    // Define node types
+    const types = ['api', 'db', 'mq'];
+
+    // Create nodes
+    for (let i = 0; i < nodeCount; i++) {
+      const type = types[Math.floor(Math.random() * types.length)];
+      const node = document.createElement('div');
+      node.className = `pulse-node ${type}`;
+      
+      // Wider spread: allow closer to edges (but not too close)
+      const x = 60 + Math.random() * (width - 120);
+      const y = 60 + Math.random() * (height - 120);
+      
+      node.style.left = `${x}px`;
+      node.style.top = `${y}px`;
+      container.appendChild(node);
+      nodes.push({ el: node, x, y, type });
+    }
+
+    // 🔹 Denser connections: 2–3 per node (was 1–2)
+    for (let i = 0; i < nodes.length; i++) {
+      const targetCount = 2 + Math.floor(Math.random() * 2); // 2-3 connections
+      for (let j = 0; j < targetCount; j++) {
+        const targetIndex = Math.floor(Math.random() * nodes.length);
+        if (targetIndex === i) continue;
+        connections.push({ from: i, to: targetIndex });
+      }
+    }
+
+    // 🔌 Electricity Spark Effect on Click (anywhere)
+    function createSpark(x, y) {
+      const spark = document.createElement('div');
+      spark.className = 'click-spark';
+      spark.style.position = 'fixed';
+      spark.style.left = `${x - 3}px`;
+      spark.style.top = `${y - 3}px`;
+      spark.style.width = '6px';
+      spark.style.height = '6px';
+      spark.style.borderRadius = '50%';
+      spark.style.backgroundColor = '#00F5D4';
+      spark.style.boxShadow = '0 0 8px #00F5D4, 0 0 16px #00F5D4';
+      spark.style.pointerEvents = 'none';
+      spark.style.opacity = '1';
+      spark.style.transform = 'scale(1)';
+      spark.style.zIndex = '10000';
+      document.body.appendChild(spark);
+
+      // Animate out
+      let opacity = 1, scale = 1;
+      const fade = setInterval(() => {
+        opacity -= 0.05;
+        scale += 0.1;
+        spark.style.opacity = opacity;
+        spark.style.transform = `scale(${scale})`;
+        if (opacity <= 0) {
+          clearInterval(fade);
+          spark.remove();
+        }
+      }, 20);
+    }
+
+    // Only trigger spark on non-interactive elements
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('a, button, input, textarea, [contenteditable]')) return;
+      createSpark(e.clientX, e.clientY);
+    });
+
+    // Draw lines and animate pulses
+    function drawConnection(from, to) {
+      const n1 = nodes[from];
+      const n2 = nodes[to];
+      if (!n1 || !n2) return;
+
+      const dx = n2.x - n1.x;
+      const dy = n2.y - n1.y;
+      const length = Math.sqrt(dx * dx + dy * dy);
+      const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+      const line = document.createElement('div');
+      line.className = 'pulse-line';
+      line.style.position = 'absolute';
+      line.style.width = `${length}px`;
+      line.style.height = '1px';
+      line.style.backgroundColor = 'rgba(51, 65, 85, 0.15)';
+      line.style.left = `${n1.x}px`;
+      line.style.top = `${n1.y}px`;
+      line.style.transform = `rotate(${angle}deg)`;
+      line.style.transformOrigin = 'left center';
+      line.style.pointerEvents = 'none';
+      container.appendChild(line);
+
+      animatePulse(line, n1.x, n1.y, dx, dy, length);
+    }
+
+    function animatePulse(line, startX, startY, dx, dy, length) {
+  // Calculate angle for signal orientation
+  const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+  const signal = document.createElement('div');
+  signal.className = 'pulse-signal';
+  signal.style.position = 'absolute';
+  signal.style.width = '6px';        // length of the signal
+  signal.style.height = '3px';        // thin bar
+  signal.style.backgroundColor = '#00F5D4';
+  signal.style.borderRadius = '2px';
+  signal.style.boxShadow = '0 0 6px #00F5D4, 0 0 12px rgba(0, 245, 212, 0.5)';
+  signal.style.transform = `rotate(${angle}deg)`;
+  signal.style.transformOrigin = 'center';
+  signal.style.pointerEvents = 'none';
+  container.appendChild(signal);
+
+  let progress = 0;
+  const duration = 2500 + Math.random() * 1500;
+
+  function update() {
+    progress += 16 / duration;
+    if (progress >= 1) {
+      signal.remove();
+      setTimeout(() => animatePulse(line, startX, startY, dx, dy, length), 1500 + Math.random() * 2000);
+      return;
+    }
+
+    const x = startX + dx * progress;
+    const y = startY + dy * progress;
+    // Center the signal on the path
+    signal.style.left = `${x - 6}px`;
+    signal.style.top = `${y - 1.5}px`;
+
+    requestAnimationFrame(update);
+  }
+  update();
+}
+
+    // Initial draw
+    connections.forEach(conn => drawConnection(conn.from, conn.to));
+  })();
+</script>
+</body>
+</html>
